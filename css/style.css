@@ -1,3 +1,4 @@
+/* General styles */
 body {
     font-family: 'Didot', sans-serif;
     margin: 0;
@@ -39,24 +40,54 @@ img {
     height: auto;
 }
 
-@media (max-width: 480px) { 
-    th:nth-child(4), 
-    th:nth-child(5) {
-        display: none; 
-    }
-     
-    td:nth-child(4), 
-    td:nth-child(5) {
-        display: none; 
+/* Alternating row colors */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light grey */
+}
+
+tbody tr:hover {
+    background-color: #d0e7ff; /* Highlight on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    table {
+        display: block; /* Make the table block to enable scroll */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent text from wrapping */
     }
 
-    #athlete-table {
-        border: none; 
+    th, td {
+        display: block; /* Each cell becomes a block */
+        width: 100%; /* Full width for each cell */
+        box-sizing: border-box; /* Include padding in width */
     }
 
-    header {
-        flex-direction: column; 
-        align-items: flex-start; 
+    th {
+        position: sticky; /* Keep headers sticky */
+        top: 0; /* Stick to the top */
+        background-color: white; /* Background color for headers */
+        z-index: 1; /* Make sure headers are on top */
+    }
+
+    /* Card-like layout */
+    tr {
+        display: flex; /* Make rows flexible */
+        flex-direction: column; /* Stack items vertically */
+        margin-bottom: 10px; /* Space between rows */
+        border: 1px solid #ccc; /* Add border around each card */
+        border-radius: 5px; /* Round the corners */
+        padding: 10px; /* Padding inside each card */
+        background-color: white; /* White background for each card */
+    }
+
+    th {
+        display: none; /* Hide headers for card view */
+    }
+    
+    td {
+        border: none; /* Remove borders in card view */
+        padding: 5px; /* Reduce padding in card view */
     }
 
     a {

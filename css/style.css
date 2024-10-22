@@ -59,7 +59,6 @@ tbody tr:nth-child(even) {
     th, td {
         min-width: 80px; 
         max-width: 150px; 
-        white-space: nowrap;
     }
 
     #athlete-table {

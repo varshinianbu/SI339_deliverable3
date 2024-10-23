@@ -87,9 +87,12 @@ for filename in os.listdir(folder_path):
                         <td>
                             <details>
                                 <summary>...</summary>
-                                <div>Grade: {grade}</div>
-                                <div>Team: {team}</div>
-                                <div>Time: {time}</div>
+                                <div>Grade:</div> 
+                                <div>{grade}</div>
+                                <div>Team:</div>
+                                <div>{team}</div>
+                                <div>Time:</div>
+                                <div>{time}</div>
                             </details>
                         </td>
                     </tr>

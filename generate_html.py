@@ -87,11 +87,11 @@ for filename in os.listdir(folder_path):
                         <td>
                             <details>
                                 <summary>...</summary>
-                                <div>Grade:</div> 
+                                <div class="sumLabel">Grade:</div> 
                                 <div>{grade}</div>
-                                <div>Team:</div>
+                                <div class="sumLabel">Team:</div>
                                 <div>{team}</div>
-                                <div>Time:</div>
+                                <div class="sumLabel">Time:</div>
                                 <div>{time}</div>
                             </details>
                         </td>

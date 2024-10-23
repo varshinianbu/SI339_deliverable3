@@ -23,10 +23,9 @@ for filename in os.listdir(folder_path):
             sanitized_filename = sanitize_filename(meet_name)  # Use sanitized filename
             meet_links.append((meet_name, sanitized_filename))  # Store meet name and link
 
-            #gets date 
+            # Get the date
             date = data[1][0]
             
-
             # Start building the individual meet HTML structure
             html_content = f'''<!DOCTYPE html>
             <html lang="en">
@@ -42,22 +41,18 @@ for filename in os.listdir(folder_path):
                 <header>
                     <h1>{meet_name}</h1>
                     <h2>{date}</h2>
-                    <a href="meets_overview.html"> <button id = "Home">Home</button></a>
+                    <a href="meets_overview.html"> <button id="Home">Home</button></a>
                 </header>
                 <section id="meet-results">
                     <h2>Meet Results</h2>
                     <table id="athlete-table">
                         <thead>
-                            <div class="table-wrapper">
-                                <tr>
-                                    <th>Place</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Grade</th>
-                                    <th>Team</th>
-                                    <th>Time</th>
-                                </tr>
-                            </div>
+                            <tr>
+                                <th>Place</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Details</th>
+                            </tr>
                         </thead>
                         <tbody>
             '''
@@ -66,7 +61,6 @@ for filename in os.listdir(folder_path):
             first_row = True
         
             for row in data[6:]:
-
                 if len(row) >= 7:
                     if first_row:
                         first_row = False
@@ -80,19 +74,24 @@ for filename in os.listdir(folder_path):
                     team = row[5]
                     profile_pic = "./AthleteImages/"+row[7]
                     
-                    #checks if it exists or not
-                    if(not os.path.isfile(profile_pic)): 
+                    # Check if the profile picture exists or not
+                    if not os.path.isfile(profile_pic): 
                         profile_pic = "./AthleteImages/anonymous.jpg"
 
                     # Append each athlete's data to the HTML content
                     html_content += f'''
                     <tr>
                         <td>{place}</td>
-                        <td><img src="{profile_pic}" alt="{name}"  width = "50" height = "50"/></td>
+                        <td><img src="{profile_pic}" alt="{name}" width="50" height="50"/></td>
                         <td><a href="{athlete_link}">{name}</a></td>
-                        <td>{grade}</td>
-                        <td>{team}</td>
-                        <td>{time}</td>
+                        <td>
+                            <details>
+                                <summary>...</summary>
+                                <div>Grade: {grade}</div>
+                                <div>Team: {team}</div>
+                                <div>Time: {time}</div>
+                            </details>
+                        </td>
                     </tr>
                     '''
 
@@ -101,7 +100,7 @@ for filename in os.listdir(folder_path):
                         </tbody>
                     </table>
                 </section>
-                </main>
+            </main>
             </body>
             </html>
             '''

@@ -42,20 +42,22 @@ for filename in os.listdir(folder_path):
                 <header>
                     <h1>{meet_name}</h1>
                     <h2>{date}</h2>
-                    <a href="meets_overview.html" style="float: right;">Home</a>
+                    <a href="meets_overview.html"> <button id = "Home">Home</button></a>
                 </header>
                 <section id="meet-results">
                     <h2>Meet Results</h2>
                     <table id="athlete-table">
                         <thead>
-                            <tr>
-                                <th>Place</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Grade</th>
-                                <th>Team</th>
-                                <th>Time</th>
-                            </tr>
+                            <div class="table-wrapper">
+                                <tr>
+                                    <th>Place</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Grade</th>
+                                    <th>Team</th>
+                                    <th>Time</th>
+                                </tr>
+                            </div>
                         </thead>
                         <tbody>
             '''

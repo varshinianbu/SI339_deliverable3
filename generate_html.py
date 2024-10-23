@@ -35,14 +35,14 @@ for filename in os.listdir(folder_path):
                 <link rel="stylesheet" href="css/reset.css">
                 <link rel="stylesheet" href="css/style.css">
                 <title>{meet_name} Country Meet</title>
-            </head>
-            <body>
-            <main>
                 <header>
                     <h1>{meet_name}</h1>
                     <h2>{date}</h2>
                     <a href="meets_overview.html"> <button id="Home">Home</button></a>
                 </header>
+            </head>
+            <body>
+            <main>
                 <section id="meet-results">
                     <h2>Meet Results</h2>
                     <table id="athlete-table">
@@ -121,11 +121,11 @@ summary_content = '''<!DOCTYPE html>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Meets Overview</title>
-</head>
-<body>
     <header>
         <h1>Meets Overview</h1>
     </header>
+</head>
+<body>
     <section id="meets-list">
         <h2>Available Meets</h2>
         <ul>

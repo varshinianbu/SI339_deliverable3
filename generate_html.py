@@ -35,11 +35,13 @@ for filename in os.listdir(folder_path):
                 <link rel="stylesheet" href="css/reset.css">
                 <link rel="stylesheet" href="css/style.css">
                 <title>{meet_name} Country Meet</title>
-                <header>
-                    <h1>{meet_name}</h1>
-                    <h2>{date}</h2>
-                    <a href="meets_overview.html"> <button id="Home">Home</button></a>
-                </header>
+                <div class="header" id="myHeader">
+                    <header>
+                        <h1>{meet_name}</h1>
+                        <h2>{date}</h2>
+                        <a href="meets_overview.html"> <button id="Home">Home</button></a>
+                    </header>
+                </div>
             </head>
             <body>
             <main>
@@ -86,7 +88,7 @@ for filename in os.listdir(folder_path):
                         <td><a href="{athlete_link}">{name}</a></td>
                         <td>
                             <details>
-                                <summary>...</summary>
+                                <summary id="ellipsis">...</summary>
                                 <div class="sumLabel">Grade:</div> 
                                 <div>{grade}</div>
                                 <div class="sumLabel">Team:</div>

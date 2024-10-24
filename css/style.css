@@ -13,6 +13,11 @@ header {
     border-bottom: 2px solid #5b8fba;
 }
 
+.header {
+    position: sticky;
+    top: 0;
+}
+
 h1 {
     font-size: 2em;
     margin-bottom: 10px;
@@ -30,6 +35,7 @@ a {
 }
 
 #Home {
+    font-family: 'Didot', sans-serif;
     background-color: #ffffff;
     color: #000000;
     border: none;
@@ -105,7 +111,6 @@ li a:hover {
 }
 
 #athlete-table th {
-    position: sticky;
     top: 0;
     background-color: #6ba6d6;
     color: rgb(0, 0, 0);

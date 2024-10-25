@@ -32,31 +32,28 @@ for filename in os.listdir(folder_path):
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <link rel="stylesheet" href="css/reset.css">
                 <link rel="stylesheet" href="css/style.css">
                 <title>{meet_name} Country Meet</title>
-                <div class="header" id="myHeader">
-                    <header>
-                        <h1>{meet_name}</h1>
-                        <h2>{date}</h2>
-                        <a href="meets_overview.html"> <button id="Home">Home</button></a>
-                    </header>
-                </div>
             </head>
             <body>
-            <main>
-                <section id="meet-results">
-                    <h2>Meet Results</h2>
-                    <table id="athlete-table">
-                        <thead>
-                            <tr>
-                                <th>Place</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Details</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <header class="header" id="myHeader">
+                    <h1>{meet_name}</h1>
+                    <h2>{date}</h2>
+                    <a href="meets_overview.html"><button id="Home">Home</button></a>
+                </header>
+                <main>
+                    <section id="meet-results">
+                        <h2>Meet Results</h2>
+                        <table id="athlete-table">
+                            <thead>
+                                <tr>
+                                    <th>Place</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
             '''
 
             # Start reading from the 7th row (index 6)
@@ -74,7 +71,7 @@ for filename in os.listdir(folder_path):
                     athlete_link = row[3]
                     time = row[4]
                     team = row[5]
-                    profile_pic = "./AthleteImages/"+row[7]
+                    profile_pic = "./AthleteImages/" + row[7]
                     
                     # Check if the profile picture exists or not
                     if not os.path.isfile(profile_pic): 
@@ -84,7 +81,7 @@ for filename in os.listdir(folder_path):
                     html_content += f'''
                     <tr>
                         <td>{place}</td>
-                        <td><img src="{profile_pic}" alt="{name}" width="50" height="50"/></td>
+                        <td><img src="{profile_pic}" alt="{name}" class="imageform"/></td>
                         <td><a href="{athlete_link}">{name}</a></td>
                         <td>
                             <details>
@@ -102,10 +99,10 @@ for filename in os.listdir(folder_path):
 
             # Close the table and HTML tags
             html_content += '''
-                        </tbody>
-                    </table>
-                </section>
-            </main>
+                            </tbody>
+                        </table>
+                    </section>
+                </main>
             </body>
             </html>
             '''
@@ -120,27 +117,28 @@ summary_content = '''<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Meets Overview</title>
+</head>
+<body>
     <header>
         <h1>Meets Overview</h1>
     </header>
-</head>
-<body>
-    <section id="meets-list">
-        <h2>Available Meets</h2>
-        <ul>
+    <main>
+        <section id="meets-list">
+            <h2>Available Meets</h2>
+            <ul>
 '''
 
 # Add each meet to the summary
 for meet_name, link in meet_links:
-    summary_content += f'            <li><a href="{link}">{meet_name}</a></li>\n'
+    summary_content += f'                <li><a href="{link}">{meet_name}</a></li>\n'
 
 # Close the HTML tags for the summary page
 summary_content += '''
-        </ul>
-    </section>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
 '''
@@ -148,6 +146,3 @@ summary_content += '''
 # Write the summary page to a file
 with open('meets_overview.html', 'w', encoding='utf-8') as f:
     f.write(summary_content)
-
-
-

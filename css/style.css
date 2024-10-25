@@ -1,16 +1,18 @@
-body {
+/* General Styles */
+header, body, h1, h2, #Home, ul a, #athlete-table td a, #athlete-table th {
     font-family: 'Didot', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #a3ccee;
-    color: #333;
+    color: #000000;
 }
 
 header {
-    padding: 20px;
+    padding: 5px 5px 5px 0px;
     text-align: center;
     background-color: #6ba6d6;
     border-bottom: 2px solid #5b8fba;
+}
+
+body {
+    background-color: #a3ccee;
 }
 
 .header {
@@ -18,35 +20,28 @@ header {
     top: 0;
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
+h1, h2, summary{
+    font-size: 1.75em;      
 }
 
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-a {
+/* Shared Link Styles (excluding the Home button) */
+ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a {
     text-decoration: none;
-    color: #000000;
     font-weight: bold;
+    display: block;
+    padding: 5px;
+    transition: background-color 0.3s, transform 0.5s, opacity 0.3s;
+    font-size: 1.25em;
 }
 
+/* Home Button */
 #Home {
-    font-family: 'Didot', sans-serif;
-    background-color: #ffffff;
-    color: #000000;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
-    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    position: absolute;
-    top: 8px;
-    right: 8px;
+    text-align: center;
+    display: inline; 
 }
 
 #Home:hover {
@@ -54,16 +49,27 @@ a {
     transform: scale(1.05);
 }
 
-#meets-list {
+ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active {
+    background-color: #bcdaf3;
+    transform: scale(1.5); 
+    opacity: 0.7; 
+}
+
+ul a:hover, #athlete-table td a:hover, #ellipsis:hover {
+    background-color: #bcdaf3;
+    border-radius: 5px;
+}
+
+/* Meets Overview Section */
+#meets-list, #meet-results {
     padding: 20px;
     margin: 0 auto;
-    max-width: 600px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#meets-list h2 {
+#meets-list, #meet-results {
     text-align: center;
 }
 
@@ -81,30 +87,6 @@ li:last-child {
     border-bottom: none;
 }
 
-li a {
-    display: block;
-    color: #000000;
-}
-
-li a:hover {
-    background-color: #bcdaf3;
-    border-radius: 5px;
-}
-
-#meet-results {
-    padding: 20px;
-    max-width: 100%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.table-wrapper {
-    overflow-y: auto;
-    overflow-x: auto;
-}
-
 #athlete-table {
     width: 100%;
     border-collapse: collapse;
@@ -112,8 +94,6 @@ li a:hover {
 
 #athlete-table th {
     top: 0;
-    background-color: #6ba6d6;
-    color: rgb(0, 0, 0);
     z-index: 2;
     text-align: left;
 }
@@ -127,56 +107,133 @@ tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+tbody tr:nth-child(odd){
+    background-color: #ffffff;
+}
+
+/* Image and Athlete Link */
 img {
-    max-width: 100%;
     height: auto;
 }
 
-#meet-results td a {
-    display: block;
-    padding: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-#meet-results td a:hover {
-    background-color: #bcdaf3;
-    color: #000;
-}
-
-details {
+body {
     margin: 0;
     padding: 0;
+    font-size: 0.75em; 
 }
 
-summary {
-    cursor: pointer;
-    font-size: 1.5em;
+details{
+    font-size: 1.15em;
+}
+
+.sumLabel {
     font-weight: bold;
-    line-height: 1;
-    display: inline-block;
-    padding: 0;
 }
 
-.sumLabel{
-    font-weight: bold;
-    color: #000000;
-}
-
+/* Ellipsis Styling */
 #ellipsis {
-    cursor: pointer;
-    font-size: 1.5em;
-    font-weight: bold;
     display: inline-block;
-    padding: 5px;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-#ellipsis:hover {
-    background-color: #bcdaf3; 
-    color: #000; 
-    border-radius: 5px; 
+.imageform{
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid; 
+    border-color: #ccc;
 }
 
 summary::-webkit-details-marker {
     display: none;
-}                                                    
+}
+
+@media (prefers-color-scheme: dark) {
+    header, body, h1, h2, #Home, ul a, #athlete-table td a, #athlete-table th {
+        font-family: 'Didot', sans-serif;
+        color: #ffffff;
+    }
+
+    header {
+        background-color: #334c5f;
+        border-bottom: 2px solid #304a5f;
+    }
+
+    body, #meets-list, #meet-result, tbody tr:nth-child(even) {
+        background-color: #3a3a3a;
+    }
+
+    #Home:hover {
+        background-color: #3d5161;
+    }
+
+    ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, 
+    #elipsis:focus, #elipsis:active, #Home {
+        background-color: #56616a;
+    }
+    
+    ul a:hover, #athlete-table td a:hover, #ellipsis:hover {
+        background-color: #72767a;
+        border-radius: 5px;
+    }
+
+    #meets-list, #meet-results {
+        background-color: #606060;
+    }
+
+    li {
+        border-bottom: 1px solid #5a5959;
+    }
+
+    #Home:hover {
+        background-color: #1f2f41;
+    }
+    
+    ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active,
+    ul a:hover, #athlete-table td a:hover, #ellipsis:hover, tbody tr:nth-child(odd) {
+        background-color: #4a4a4a;
+    }
+
+    #athlete-table th, #athlete-table td {
+        border: 1px solid #000000;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a, #Home:hover,ul 
+    a:hover, #athlete-table td a:hover, #ellipsis:hover, #Home:focus, ul a:focus, ul a:active, 
+    #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active {
+        transition: none; 
+        background-color: transparent; 
+        color: inherit; 
+        transform: none; 
+        text-decoration: underline;
+    }
+
+    #Home, #Home:hover {
+        background-color: #ffffff; 
+        color: #000000; 
+    }
+
+    tbody tr:hover {
+        background-color: inherit; 
+    }
+
+    tbody tr:hover {
+        background-color: transparent; 
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2; 
+    }
+
+    @media (prefers-color-scheme: dark){
+        tbody tr:nth-child(even) {
+            background-color: #3a3a3a; 
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #4a4a4a; 
+        }
+    }
+}

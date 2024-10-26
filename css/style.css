@@ -1,61 +1,245 @@
-body {
+/* General Styles */
+header, body, h1, h2, #Home, ul a, #athlete-table td a, #athlete-table th {
     font-family: 'Didot', sans-serif;
-    margin: 0;
-    padding: 0;
+    color: #000000;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 5px 5px 5px 0px;
+    text-align: center;
+    background-color: #6ba6d6;
+    border-bottom: 2px solid #5b8fba;
 }
 
-h1, h2, h3 {
-    font-size: 1.5em;
+body {
+    background-color: #a3ccee;
 }
 
-a {
+.header {
+    position: sticky;
+    top: 0;
+}
+
+h1, h2, summary{
+    font-size: 1.75em;      
+}
+
+/* Shared Link Styles (excluding the Home button) */
+ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a {
     text-decoration: none;
-    color: blue;
+    font-weight: bold;
+    display: block;
+    padding: 5px;
+    transition: background-color 0.1s ease-in-out, transform 0.1s ease-in-out, opacity 0.7s ease-in-out;
+    font-size: 1.25em;
 }
 
-#meet-results {
-    padding: 10px;
+/* Home Button */
+#Home {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-align: center;
+    display: inline; 
+    transition: #5a8cc0 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 
-table {
+#Home:hover {
+    background-color: #5a8cc0;
+    transform: scale(1.0);
+}
+
+#Home:focus, #Home:active {
+    transition: none;
+}
+
+ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active {
+    background-color: #bcdaf3;
+    transform: scale(1.0); 
+    opacity: 0.8; 
+}
+
+ul a:hover, #athlete-table td a:hover, #ellipsis:hover {
+    background-color: #bcdaf3;
+    transform: scale(1.2);
+    border-radius: 5px;
+}
+
+/* Meets Overview Section */
+#meets-list, #meet-results {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#meets-list, #meet-results {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+#athlete-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
+#athlete-table th {
+    top: 0;
+    z-index: 2;
     text-align: left;
 }
 
+#athlete-table th, #athlete-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #ffffff;
+}
+
+/* Image and Athlete Link */
 img {
-    max-width: 100%;  
     height: auto;
 }
 
-@media (max-width: 481px) {
-    th:nth-child(1), 
-    th:nth-child(4), 
-    th:nth-child(5)  
-    {
-        display: none; 
-    }
-    
-    td:nth-child(1), 
-    td:nth-child(4), 
-    td:nth-child(5)  
-    {
-        display: none; 
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 0.75em; 
+}
+
+details{
+    font-size: 1.15em;
+}
+
+.sumLabel {
+    font-weight: bold;
+}
+
+/* Ellipsis Styling */
+#ellipsis {
+    display: inline-block;
+}
+
+.imageform{
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid; 
+    border-color: #ccc;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    header, body, h1, h2, #Home, ul a, #athlete-table td a, #athlete-table th {
+        font-family: 'Didot', sans-serif;
+        color: #ffffff;
     }
 
+    header {
+        background-color: #334c5f;
+        border-bottom: 2px solid #304a5f;
+    }
+
+    body, #meets-list, #meet-result, tbody tr:nth-child(even) {
+        background-color: #3a3a3a;
+    }
+
+    ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, 
+    #elipsis:focus, #elipsis:active, #Home {
+        background-color: #56616a;
+    }
     
-    #athlete-table {
-        border: none; 
+    ul a:hover, #athlete-table td a:hover, #ellipsis:hover {
+        background-color: #72767a;
+        border-radius: 5px;
+    }
+
+    #meets-list, #meet-results {
+        background-color: #606060;
+    }
+
+    li {
+        border-bottom: 1px solid #5a5959;
+    }
+
+    #Home:hover {
+        background-color: #1f2f41;
+    }
+    
+    ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active,
+    ul a:hover, #athlete-table td a:hover, #ellipsis:hover, tbody tr:nth-child(odd) {
+        background-color: #4a4a4a;
+    }
+
+    #athlete-table th, #athlete-table td {
+        border: 1px solid #000000;
+    }
+
+    tbody tr:nth-child(odd):hover {
+        background-color: #636363; 
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a, #Home:hover,ul 
+    a:hover, #athlete-table td a:hover, #ellipsis:hover, #Home:focus, ul a:focus, ul a:active, 
+    #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active {
+        transition: none; 
+        background-color: transparent; 
+        color: inherit; 
+        transform: none; 
+        text-decoration: underline;
+    }
+
+    #Home, #Home:hover {
+        background-color: #ffffff; 
+        color: #000000; 
+    }
+
+    tbody tr:hover {
+        background-color: inherit; 
+    }
+
+    tbody tr:hover {
+        background-color: transparent; 
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2; 
+    }
+
+    @media (prefers-color-scheme: dark){
+        tbody tr:nth-child(even) {
+            background-color: #3a3a3a; 
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #4a4a4a; 
+        }
     }
 }

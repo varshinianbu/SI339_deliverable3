@@ -235,7 +235,8 @@ summary::-webkit-details-marker {
         tbody tr:nth-child(even) {
             background-color: #3a3a3a; 
         }
-        tbody tr:nth-child(odd) {
+        tbody tr:nth-child(odd), tr:nth-child(odd), #athlete-table tbody tr:nth-child(odd) td a:hover, 
+        tbody tr:nth-child(odd) #ellipsis:hover{
             background-color: #4a4a4a; 
         }
     }

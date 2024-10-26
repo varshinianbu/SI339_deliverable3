@@ -42,12 +42,16 @@ ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a {
     cursor: pointer;
     text-align: center;
     display: inline; 
+    transition: #5a8cc0 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 
 #Home:hover {
     background-color: #5a8cc0;
-    transition: background-color 0.1s ease-in-out;
     transform: scale(1.0);
+}
+
+#Home:focus, #Home:active {
+    transition: none;
 }
 
 ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active {

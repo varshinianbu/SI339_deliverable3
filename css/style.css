@@ -30,7 +30,7 @@ ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a {
     font-weight: bold;
     display: block;
     padding: 5px;
-    transition: background-color 0.3s, transform 0.5s, opacity 0.3s;
+    transition: background-color 0.5s ease-in-out, transform 0.75s ease-in-out, opacity 0.5s ease-in-out;
     font-size: 1.25em;
 }
 
@@ -51,12 +51,13 @@ ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a {
 
 ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active {
     background-color: #bcdaf3;
-    transform: scale(1.5); 
-    opacity: 0.7; 
+    transform: scale(1.2); 
+    opacity: 0.8; 
 }
 
 ul a:hover, #athlete-table td a:hover, #ellipsis:hover {
     background-color: #bcdaf3;
+    transform: scale(1.1);
     border-radius: 5px;
 }
 
@@ -165,6 +166,7 @@ summary::-webkit-details-marker {
 
     #Home:hover {
         background-color: #3d5161;
+        transform: scale(1.15);
     }
 
     ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, 

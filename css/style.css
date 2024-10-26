@@ -46,6 +46,7 @@ ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a {
 
 #Home:hover {
     background-color: #5a8cc0;
+    transition: background-color 0.1s ease-in-out;
     transform: scale(1.0);
 }
 

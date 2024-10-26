@@ -46,18 +46,18 @@ ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a {
 
 #Home:hover {
     background-color: #5a8cc0;
-    transform: scale(1.05);
+    transform: scale(1.0);
 }
 
 ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active {
     background-color: #bcdaf3;
-    transform: scale(0.1); 
+    transform: scale(1.0); 
     opacity: 0.8; 
 }
 
 ul a:hover, #athlete-table td a:hover, #ellipsis:hover {
     background-color: #bcdaf3;
-    transform: scale(0.1);
+    transform: scale(1.2);
     border-radius: 5px;
 }
 
@@ -162,11 +162,6 @@ summary::-webkit-details-marker {
 
     body, #meets-list, #meet-result, tbody tr:nth-child(even) {
         background-color: #3a3a3a;
-    }
-
-    #Home:hover {
-        background-color: #3d5161;
-        transform: scale(0.1);
     }
 
     ul a:focus, ul a:active, #athlete-table td a:focus, #athlete-table td a:active, 

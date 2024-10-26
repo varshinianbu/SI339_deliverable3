@@ -165,7 +165,8 @@ summary::-webkit-details-marker {
         border-bottom: 2px solid #304a5f;
     }
 
-    body, #meets-list, #meet-result, tbody tr:nth-child(even) {
+    body, #meets-list, #meet-result, tbody tr:nth-child(even), tbody tr:nth-child(odd) #ellipsis:hover,
+    #athlete-table tbody tr:nth-child(odd) td a:hover {
         background-color: #3a3a3a;
     }
 
@@ -198,10 +199,6 @@ summary::-webkit-details-marker {
 
     #athlete-table th, #athlete-table td {
         border: 1px solid #000000;
-    }
-
-    tbody tr:nth-child(odd):hover {
-        background-color: #636363; 
     }
 }
 

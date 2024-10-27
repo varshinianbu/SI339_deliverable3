@@ -231,7 +231,7 @@ summary::-webkit-details-marker {
 
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
-    /* Remove animations for links and Home button when reduced motion is preferred */
+    /* Remove animations and visual feedback for links and Home button */
     ul a, #athlete-table td a, #Home, #ellipsis, #meets-list a, #Home:hover,
     ul a:hover, #athlete-table td a:hover, #ellipsis:hover, #Home:focus, ul a:focus, ul a:active, 
     #athlete-table td a:focus, #athlete-table td a:active, #elipsis:focus, #elipsis:active {
@@ -240,12 +240,16 @@ summary::-webkit-details-marker {
         color: inherit;
         transform: none;
         text-decoration: underline;
+        outline: none; /* Remove focus outline */
+        -webkit-tap-highlight-color: transparent; /* Disable mobile touch highlight */
     }
     
     /* Styling for Home button in reduced motion mode */
     #Home, #Home:hover {
         background-color: #ffffff;
         color: #000000;
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     /* Hover effect removal for table rows in reduced motion mode */
